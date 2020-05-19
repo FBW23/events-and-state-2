@@ -11,11 +11,11 @@ class App extends Component {
     // this.increaseCounter = this.increaseCounter.bind(this)
     this.state = {
       students: [
-        { id: 1, name: 'Bendis', infected: false },
-        { id: 2, name: 'Plamen', infected: false },
-        { id: 3, name: 'Julia', infected: false },
-        { id: 4, name: 'Nagster', infected: false },
-        { id: 5, name: 'Aghy', infected: false }
+        { id: 1, name: 'Stud 1', infected: false },
+        { id: 2, name: 'Stud 2', infected: false },
+        { id: 3, name: 'Stud 3', infected: false },
+        { id: 4, name: 'Stud 4', infected: false },
+        { id: 5, name: 'Stud 5', infected: false }
       ]
     };
   }
@@ -40,12 +40,6 @@ class App extends Component {
   };
 
   render() {
-    let healthy = this.state.students.filter((student) => !student.infected);
-    let infected = this.state.students.filter((student) => student.infected);
-
-    let jsxHealthyList = healthy.map((student) => <li onClick={() => this.infect(student.id)}>{student.name}</li>);
-
-    let jsxInfectedList = infected.map((student) => <li>{student.name}</li>);
 
     return (
       <div className="App">
@@ -53,18 +47,18 @@ class App extends Component {
           <h1>Corona Game</h1>
         </header>
         <main>
-          {healthy.length > 0 && (
             <div>
               <h4>Healthy</h4>
-              <ul>{jsxHealthyList}</ul>
+              <ul>
+                {/* List of healthy goes here */}
+              </ul>
             </div>
-          )}
-          {infected.length > 0 && (
             <div>
               <h4>Infected</h4>
-              <ul>{jsxInfectedList}</ul>
+              <ul>
+                {/* List of infected goes here */}
+              </ul>
             </div>
-          )}
         </main>
         <footer onClick={this.reset}>Reset</footer>
       </div>

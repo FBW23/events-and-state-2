@@ -23,7 +23,7 @@
 
 main {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   min-height: 70vh;
 }
 
