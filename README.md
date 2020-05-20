@@ -4,7 +4,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 * Render Healthy and Infected people in separate lists
 * Use the array filter method to fetch the healthy / infected lists from state
-* 
 
 
 ## Available Scripts
