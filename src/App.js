@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import StudentsHealthy from './StudentsHealthy';
+import StudentsInfected from './StudentsInfected';
 
 class App extends Component {
 
@@ -43,10 +45,6 @@ class App extends Component {
     let healthy = this.state.students.filter((student) => !student.infected);
     let infected = this.state.students.filter((student) => student.infected);
 
-    let jsxHealthyList = healthy.map((student) => <li onClick={() => this.infect(student.id)}>{student.name}</li>);
-
-    let jsxInfectedList = infected.map((student) => <li>{student.name}</li>);
-
     return (
       <div className="App">
         <header className="App-header">
@@ -54,16 +52,10 @@ class App extends Component {
         </header>
         <main>
           {healthy.length > 0 && (
-            <div>
-              <h4>Healthy</h4>
-              <ul>{jsxHealthyList}</ul>
-            </div>
+            <StudentsHealthy healthy={healthy} infect={this.infect} />
           )}
           {infected.length > 0 && (
-            <div>
-              <h4>Infected</h4>
-              <ul>{jsxInfectedList}</ul>
-            </div>
+            <StudentsInfected infected={infected} />
           )}
         </main>
         <footer onClick={this.reset}>Reset</footer>
